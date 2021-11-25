@@ -430,39 +430,5 @@
         </ul>
       </section>
     </main>
-    <script>
-      var e = document.documentElement.clientWidth || window.innerWidth,
-        t = document.documentElement.clientHeight || window.innerHeight;
-      o.assert.isAbove(
-        e,
-        850,
-        alert(
-          "Please run this test in a larger window (before any media queries) "
-        )
-      );
-      var r = document.getElementById("navbar");
-      o.assert.isAtMost(
-        r.getBoundingClientRect().left,
-        e / 2 - r.getBoundingClientRect().width,
-        "Left of bounding rectangle is not correct."
-      ),
-        o.assert.isAtMost(
-          r.getBoundingClientRect().top,
-          t / 2,
-          "Top of bounding rectangle is not correct."
-        ),
-        window.scroll(0, 1e3),
-        o.assert.isAtMost(
-          r.getBoundingClientRect().left,
-          e / 2 - r.getBoundingClientRect().width,
-          "After scroll: Left of bounding rectangle is not correct."
-        ),
-        o.assert.isAtMost(
-          r.getBoundingClientRect().top,
-          t / 2,
-          "After scroll: Top of bounding rectangle is not correct."
-        ),
-        window.scroll(0, 0);
-    </script>
   </body>
 </html>
